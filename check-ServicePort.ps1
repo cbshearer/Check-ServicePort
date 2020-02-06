@@ -34,7 +34,7 @@
             }
     
         ## write the check counter and wait for 10 sec before retrying.
-            write-host $n
+            write-host "check number $n succeded"
             start-sleep 10
     }
 
@@ -42,7 +42,7 @@
     while ($n -le ($check - 1))
 
 ## State how many times we restarted and checked.
-    write-host "needed to be restarted $r times"
+    write-host "`nneeded to be restarted $r times"
     write-host "checked port $n times"
 
 ## Send a message if there was a restart
