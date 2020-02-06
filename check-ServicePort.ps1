@@ -10,7 +10,10 @@
     $service   = "Spooler"
     $ipAddress = "10.20.30.40"
     $TCPport   = "777"
-
+    
+## Number of times to check the service
+    $check = 3
+    
 ## Enter variables for send-mailmessage here
     $smtpDomain = "example.com"
     $SMTPto     = "me@example.com"
@@ -36,10 +39,10 @@
     }
 
 ## Repeat if the counter is 2 or less 
-    while ($n -le 2)
+    while ($n -le ($check - 1))
 
 ## State how many times we restarted and checked.
-    write-host "restarted $r times"
+    write-host "needed to be restarted $r times"
     write-host "checked port $n times"
 
 ## Send a message if there was a restart
