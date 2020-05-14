@@ -48,6 +48,6 @@
 ## Send a message if there was a restart
     if ($r -ge 1)
         {
-            $body = "<br>The service $service has been restarted $r time(s) on $env:computername.<br><br>This happened because port $TCPport was inaccessible on the IP Address $ipAddress during $n tests."
+            $body = "<br>The service <b>$service</b> has been restarted <b>$r</b> time(s) on <b>$env:computername</b>.<br><br>This happened because port <b>$TCPport</b> was inaccessible on the IP Address <b>$ipAddress</b> during <b>$n</b> tests."
             Send-MailMessage -to $SMTPto -from $SMTPfrom -subject "$service service restart"  -SmtpServer $SMTPServer -body $body -bodyAsHTML
         }
